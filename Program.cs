@@ -6,7 +6,8 @@ namespace tabelaCampeonato
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Tabela t = new Tabela();
+            t.time();
         }
     }
 }
