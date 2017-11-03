@@ -6,8 +6,8 @@ namespace tabelaCampeonato
     {
         static void Main(string[] args)
         {
-            Tabela t = new Tabela();
-            t.time();
+            Tabela tabela = new Tabela();
+            tabela.tabela();
         }
     }
 }

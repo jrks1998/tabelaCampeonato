@@ -1,15 +1,27 @@
 using System;
+using System.Collections.Generic;
 
 namespace tabelaCampeonato
 {
     class Tabela
     {
-        public void time() {
-            System.Console.WriteLine("menu:");
-            System.Console.WriteLine("1 - Adiciona time e sua respectiva pontuação \n2 - Finaliza o programa");
+        public List<Times> times = new List<Times>();
+        public void tabela() {
+            System.Console.WriteLine("Menu:");
+            System.Console.WriteLine("Enter - Adiciona time e pontuação \n0 - Finaliza e exibe a tabela");
 
-            while (Console.ReadKey().Key != ConsoleKey.Oem2) {
-                System.Console.WriteLine("oi");
+            while (Console.ReadKey().Key == ConsoleKey.Enter) {
+                System.Console.WriteLine("Informe o nome do time: ");
+                string time = Console.ReadLine();
+
+                System.Console.WriteLine("Informe a pontuação do time: ");
+                int pont = Convert.ToInt32(Console.ReadLine());
+
+                this.times.Add(new Times(time, pont));
+            }
+
+            for (int i = 0; i < times.Count; i++) {
+                times[i].dados();
             }
         }
     }
