@@ -1,28 +1,23 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace tabelaCampeonato
 {
     class Tabela
     {
-        public List<Times> times = new List<Times>();
-        public void tabela() {
-            System.Console.WriteLine("Menu:");
-            System.Console.WriteLine("Enter - Adiciona time e pontuação \n0 - Finaliza e exibe a tabela");
+        public List<Times> times;
 
-            while (Console.ReadKey().Key == ConsoleKey.Enter) {
-                System.Console.WriteLine("Informe o nome do time: ");
-                string time = Console.ReadLine();
-
-                System.Console.WriteLine("Informe a pontuação do time: ");
-                int pont = Convert.ToInt32(Console.ReadLine());
-
-                this.times.Add(new Times(time, pont));
-            }
-
-            for (int i = 0; i < times.Count; i++) {
-                times[i].dados();
-            }
+        public Tabela() {
+            times = new List<Times>();
         }
+
+        public void resultado() {
+            times.ForEach(delegate(Times t) {
+                times.Sort(t.pont);
+                System.Console.WriteLine($"Time: {t.time} | Pontuação: {t.pont}");
+            });
+        }
+            
     }
 }
