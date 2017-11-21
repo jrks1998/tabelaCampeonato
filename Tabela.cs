@@ -14,7 +14,8 @@ namespace tabelaCampeonato
 
         public void resultado() {
             times.ForEach(delegate(Times t) {
-                times.Sort(t.pont);
+                t.pont.CompareTo(t.pont);
+                times.Sort();
                 System.Console.WriteLine($"Time: {t.time} | Pontuação: {t.pont}");
             });
         }

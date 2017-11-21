@@ -20,7 +20,6 @@ namespace tabelaCampeonato
                     System.Console.WriteLine("Digite a pontuação:");
                     string pont = Console.ReadLine();
                     t.times.Add(new Times(time, Int32.Parse(pont)));
-                    pont.CompareTo(pont);
                 }
             } while (a.Key != ConsoleKey.D2);
 
